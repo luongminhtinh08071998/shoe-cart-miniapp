@@ -1,29 +1,22 @@
-// import React from 'react';
-
-// import { useState } from "react";
-
-const ShoeItem = ({handleShoeItem, shoeItem}) => {
-  const shoe = shoeItem;
-  // console.log(shoeItem)
+const ShoeItem = ({ handleShoeItem, shoeItem }) => {
+  const {
+    name = '',
+    color = '',
+    image = '',
+    description = '',
+    price = 0,
+  } = shoeItem;
 
   return (
     <div className="shoe-item">
-      <div
-        className="shoe-item--image"
-        style={{ backgroundColor: shoe.color }}
-      >
-        <img
-          alt={shoe.name}
-          src={shoe.image}
-        />
+      <div className="shoe-item--image" style={{ backgroundColor: color }}>
+        <img alt={name} src={image} />
       </div>
-      <div className="shoe-item--name">{shoe.name}</div>
-      <div className="shoe-item--description">
-        {shoe.description}
-      </div>
+      <div className="shoe-item--name">{name}</div>
+      <div className="shoe-item--description">{description}</div>
       <div className="shoe-item--footer">
-        <div className="shoe-item--price">${shoe.price}</div>
-        <div className="shoe-item--button" onClick={() => handleShoeItem}>
+        <div className="shoe-item--price">${price}</div>
+        <div className="shoe-item--button" onClick={handleShoeItem(shoeItem)}>
           <p>ADD TO CART</p>
         </div>
       </div>
@@ -32,4 +25,3 @@ const ShoeItem = ({handleShoeItem, shoeItem}) => {
 };
 
 export default ShoeItem;
-
