@@ -5,22 +5,28 @@ import ShoeItem from './ShoeItem';
 const ShoeList = () => {
   const [shoes, setShoes] = useState([]);
 
+  const [cartItems, setCartItems] = useState([]);
+
+  // Currying arrow function in with double calling
+  const handleShoeItem = (newItem) => () => {
+    setCartItems((olsItems) => [...olsItems, newItem]);
+  };
+
+  // Log the cart has all shoes was added
+  console.log(cartItems);
+
   useEffect(() => {
     setShoes(DataShoes);
   }, []);
 
-
-  const [cartItems, setCartItems] = useState([]);
-  console.log(cartItems)
-
-  const handleShoeItem = (shoe) => {
-    setCartItems(Array.from(shoe));
-  }
-
   return (
     <div className="shoe-list">
       {shoes.map((shoe) => (
-        <ShoeItem key={shoe.id} shoeItem={shoe} handleShoeItem={handleShoeItem(shoe)}/>
+        <ShoeItem
+          key={shoe.id}
+          shoeItem={shoe}
+          handleShoeItem={handleShoeItem} // sent props as a function has setState inside
+        />
       ))}
     </div>
   );
