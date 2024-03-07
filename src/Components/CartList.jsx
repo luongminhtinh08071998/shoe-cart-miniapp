@@ -1,6 +1,6 @@
 import { BiTrash } from 'react-icons/bi';
 
-const CartList = ({ cartItems = [] }) => {
+const CartList = ({ cartItems = [], handleRemoveItem }) => {
   return (
     <div>
       {cartItems?.map((item) => (
@@ -19,7 +19,10 @@ const CartList = ({ cartItems = [] }) => {
                 <div className="cart-item--number">1</div>
                 <div className="cart-item--button">+</div>
               </div>
-              <div className="cart-item--remove">
+              <div
+                className="cart-item--remove"
+                onClick={handleRemoveItem(item.id)}
+              >
                 <BiTrash />
               </div>
             </div>

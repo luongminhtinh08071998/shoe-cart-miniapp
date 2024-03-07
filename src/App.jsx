@@ -7,11 +7,15 @@ import { DataShoes } from './DataShoe';
 function App() {
   const [shoes, setShoes] = useState([]);
 
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState([]); // Storage cart
 
   // Currying arrow function in with double calling
   const handleShoeItem = (newItem) => () => {
     setCartItems((olsItems) => [...olsItems, newItem]);
+  };
+
+  const handleRemoveItem = (itemId) => () => {
+    setCartItems((olsItems) => olsItems.filter((x) => x.id !== itemId));
   };
 
   useEffect(() => {
@@ -21,7 +25,7 @@ function App() {
   return (
     <div className="cart-list">
       <CartLeft shoesItem={shoes} handleShoeItem={handleShoeItem} />
-      <CartRight cartItems={cartItems} />
+      <CartRight cartItems={cartItems} handleRemoveItem={handleRemoveItem} />
     </div>
   );
 }

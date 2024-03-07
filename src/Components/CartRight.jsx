@@ -1,7 +1,7 @@
 // import React from 'react';
 import CartList from './CartList';
 
-const CartRight = ({ cartItems }) => {
+const CartRight = ({ cartItems, handleRemoveItem }) => {
   return (
     <div>
       <div className="cart">
@@ -19,7 +19,7 @@ const CartRight = ({ cartItems }) => {
         </div>
 
         <div className="cart-body">
-          <CartList cartItems={cartItems} />
+          <CartList cartItems={cartItems} handleRemoveItem={handleRemoveItem} />
         </div>
       </div>
     </div>
