@@ -2,10 +2,10 @@
 
 import ShoeList from './ShoeList';
 
-const CartLeft = () => {
- return (
-  <div>
-   <div className="cart" style={{marginRight: '20px'}}>
+const CartLeft = ({ shoesItem, handleShoeItem }) => {
+  return (
+    <div>
+      <div className="cart" style={{ marginRight: '20px' }}>
         <div className="cart-top">
           <img
             alt=""
@@ -16,11 +16,11 @@ const CartLeft = () => {
         <div className="cart-title">Our Products</div>
 
         <div className="cart-body">
-          <ShoeList />
+          <ShoeList shoes={shoesItem} handleShoeItem={handleShoeItem} />
         </div>
       </div>
-  </div>
- );
+    </div>
+  );
 };
 
 export default CartLeft;
