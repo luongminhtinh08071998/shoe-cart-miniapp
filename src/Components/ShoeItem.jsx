@@ -1,12 +1,10 @@
 // import React from 'react';
 
-const ShoeItem = ({shoeItem}) => {
+// import { useState } from "react";
+
+const ShoeItem = ({handleShoeItem, shoeItem}) => {
   const shoe = shoeItem;
   // console.log(shoeItem)
-
-  function handleShoeItem() {
-    
-  }
 
   return (
     <div className="shoe-item">
@@ -25,7 +23,7 @@ const ShoeItem = ({shoeItem}) => {
       </div>
       <div className="shoe-item--footer">
         <div className="shoe-item--price">${shoe.price}</div>
-        <div className="shoe-item--button" onClick={handleShoeItem}>
+        <div className="shoe-item--button" onClick={() => handleShoeItem}>
           <p>ADD TO CART</p>
         </div>
       </div>

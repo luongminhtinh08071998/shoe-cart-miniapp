@@ -3,9 +3,7 @@ import { BiTrash } from "react-icons/bi";
 
 const CartItem = () => {
 
-  const removeCartItem = () => {
-
-  }
+  
  return (
   <div className="cart-item">
             <div className="cart-item--left">
@@ -27,7 +25,7 @@ const CartItem = () => {
                   <div className="cart-item--number">1</div>
                   <div className="cart-item--button">+</div>
                 </div>
-                <div className="cart-item--remove" onClick={removeCartItem}>
+                <div className="cart-item--remove">
                   <BiTrash />
                 </div>
               </div>

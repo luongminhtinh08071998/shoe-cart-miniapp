@@ -5,6 +5,8 @@ const CartList = () => {
  return (
   <div>
    <CartItem />
+   <CartItem />
+   <CartItem />
   </div>
  );
 };
