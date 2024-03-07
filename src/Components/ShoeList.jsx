@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { DataShoes } from '../DataShoe';
 import ShoeItem from './ShoeItem';
+import CartList from './CartList';
 
 const ShoeList = () => {
   const [shoes, setShoes] = useState([]);
@@ -25,9 +26,10 @@ const ShoeList = () => {
         <ShoeItem
           key={shoe.id}
           shoeItem={shoe}
-          handleShoeItem={handleShoeItem} // sent props as a function has setState inside
+          handleShoeItem={handleShoeItem}
         />
       ))}
+      <CartList cartItems ={cartItems}/>
     </div>
   );
 };

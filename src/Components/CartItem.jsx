@@ -1,9 +1,10 @@
 // import React from 'react';
 import { BiTrash } from "react-icons/bi";
 
-const CartItem = () => {
+const CartItem = ({item}) => {
 
-  
+  console.log("item", item);
+
  return (
   <div className="cart-item">
             <div className="cart-item--left">
