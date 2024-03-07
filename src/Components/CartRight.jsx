@@ -1,10 +1,10 @@
 // import React from 'react';
 import CartList from './CartList';
 
-const CartRight = () => {
- return (
-  <div>
-   <div className="cart">
+const CartRight = ({ cartItems }) => {
+  return (
+    <div>
+      <div className="cart">
         <div className="cart-top">
           <img
             alt=""
@@ -19,11 +19,11 @@ const CartRight = () => {
         </div>
 
         <div className="cart-body">
-          <CartList />
+          <CartList cartItems={cartItems} />
         </div>
       </div>
-  </div>
- );
+    </div>
+  );
 };
 
 export default CartRight;
