@@ -1,7 +1,17 @@
-// import React from 'react';
+
 import CartList from './CartList';
 
-const CartRight = ({ cartItems }) => {
+const CartRight = ({ cartItems, handleRemoveItem, handleIncrement, handleDecrement }) => {
+
+  // const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+  // const totalAmount = cartItems.reduce((total, item) => total + (item.quantity * item.price), 0);
+
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+const totalAmount = cartItems.reduce((total, item) => total + (item.quantity * item.price), 0);
+
+
   return (
     <div>
       <div className="cart">
@@ -10,16 +20,16 @@ const CartRight = ({ cartItems }) => {
             alt=""
             src="https://cdn-icons-png.flaticon.com/512/732/732084.png"
           />
-          <div>Total: 10</div>
+          <div>Total: {totalQuantity}</div>
         </div>
 
         <div className="cart-title">
           <span>Your cart</span>
-          <span className="cart--amount">$89.97</span>
+          <span className="cart--amount">${totalAmount.toFixed(2)}</span>
         </div>
 
         <div className="cart-body">
-          <CartList cartItems={cartItems} />
+          <CartList cartItems={cartItems} handleRemoveItem={handleRemoveItem}  handleIncrement={handleIncrement} handleDecrement={handleDecrement}/>
         </div>
       </div>
     </div>
@@ -27,3 +37,4 @@ const CartRight = ({ cartItems }) => {
 };
 
 export default CartRight;
+
