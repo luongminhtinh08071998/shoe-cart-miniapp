@@ -9,7 +9,6 @@ function App() {
 
   const [cartItems, setCartItems] = useState([]);
 
-  // Currying arrow function in with double calling
   const handleShoeItem = (newItem) => () => {
     const existItem = cartItems.find(item => item.id === newItem.id);
     if (existItem) {
